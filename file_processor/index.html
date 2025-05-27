@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langtanium's Web Tools | </title>
+    <script type="module" src="../js/fileProcessor.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+</head>
+<body>
+    <header>
+        <h1><a href="../">Langtanium's Web Tools</a></h1>
+    </header>
+    <main>
+        <form>
+            <label for="file-input" class="custom-file-input">
+                Upload Files
+            </label>
+            <input id="file-input" type="file" name="files" accept=".bdl" multiple>
+            <label for="file-submit" class="custom-file-input">
+                Process Files
+            </label>
+            <input id="file-submit" type="submit">
+        </form>
+        <div class="file-downloads"></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Langtanium</p>
+        <p><span id="game"></span> &copy; <span id="company"></span></p>
+    </footer>
+</body>
+</html>

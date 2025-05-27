@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+header {
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+    background-color: #000;
+}
+
+header h1 a {
+    font-size: 4rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+#game-info {
+    margin: auto;
+    width: 100%;
+    max-width: 640px;
+    text-align: center;
+}
+
+#game-info h2 {
+    margin: 1rem auto;
+    font-size: 3rem;
+}
+
+main {
+    padding: 2rem;
+    min-height: 400px;
+    color: #fff;
+    background-color: #223;
+}
+
+.processor-link {
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 100%;
+    max-width: 640px;
+    background-color: #000;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.processor-link a {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.processor-link a:hover {
+    color: #223;
+    transition: all 0.3s e
+}
+
+form {
+    margin: auto;
+    padding: 2rem;
+    width: 100%;
+    max-width: 640px;
+    box-sizing: border-box;
+    background-color: #000;
+    border-radius: 1rem;
+}
+
+input {
+    display: none;
+}
+
+#search {
+    display: block;
+    margin: 1rem auto auto auto;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 2rem;
+    border: 0;
+    border-radius: 1rem;
+}
+
+.custom-file-input {
+    display: block;
+    margin: auto;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 2rem;
+    text-align: center;
+    background-color: #223;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-file-input:hover {
+    color: #223;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-file-input:last-of-type {
+    margin-top: 1rem;
+}
+
+.file-downloads {
+    margin: auto;
+    width: 100%;
+    max-width: 540px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.file-downloads p {
+    margin: 1rem auto;
+    padding: 0.5rem;
+    background-color: #000;
+    border-radius: 0.5rem;
+    animation: processAppear 0.2s ease-in-out;
+}
+
+.link a {
+    display: block;
+    margin: 1rem auto;
+    padding: 1rem;
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+    background-color: #000;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.link a:hover {
+    color: #223;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    background-color: #000;
+}
+
+@keyframes processAppear {
+    0% {
+        transform: translate(0, -2rem) scale(1, 0);
+    }
+    100% {
+        transform: translate(0, 0) scale(1, 1);
+    }
+}

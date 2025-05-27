@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langtanium's Web Tools | JSON File Finder</title>
+    <script type="module" src="../js/fileFinder.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+</head>
+<body>
+    <header>
+        <h1><a href="../">Langtanium's Web Tools</a></h1>
+    </header>
+    <main>
+        <div id="game-info">
+            <h2>JSON File Finder</h2>
+            <p>Finds a single json file from multiple json files based on the single file's text content.</p>
+        </div>
+        <form>
+            <label for="file-input" class="custom-file-input">
+                Upload Files
+            </label>
+            <input id="file-input" type="file" name="files" multiple>
+            <input id="search" type="text" placeholder="Search Text">
+            <label for="file-submit" class="custom-file-input">
+                Search Files
+            </label>
+            <input id="file-submit" type="submit">
+        </form>
+        <div class="file-downloads"></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Langtanium</p>
+    </footer>
+</body>
+</html>
