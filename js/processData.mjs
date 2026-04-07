@@ -51,7 +51,9 @@ function sonicRumbleDecrypt(fileData) {
   let tempArray = [];
   let key = [114, 172, 9, 247, 86, 136, 163, 245, 48, 136, 180];
   
-  if (fileData.getUint8(0) === 249 && fileData.getUint8(1) === 103) {
+  if (fileData.getUint8(0) === 39 && fileData.getUint8(1) === 194) {
+    keyOffset = 0;
+  } else if (fileData.getUint8(0) === 249 && fileData.getUint8(1) === 103) {
     keyOffset = 1;
   } else if (fileData.getUint8(0) === 92 && fileData.getUint8(1) === 153) {
     keyOffset = 2;
