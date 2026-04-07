@@ -38,20 +38,18 @@ async function handleForm() {
   // Load files and process them
   let waitReader = new Promise((resolve) =>{
     let fileCount = inputFileList.length;
+    let names = [];
     let count = [];
-    let found = false;
     inputFileList.forEach(async (file) => {
       const reader = new FileReader();
       reader.readAsText(file);
       reader.addEventListener("load", () => {
         if (reader.result.includes(searchInput.value)) {
-          found = true;
+          names.push(file.name);
         }
         count.push(0);
-        if (found) {
-          resolve(file.name);
-        } else if (count.length === fileCount) {
-          resolve(null);
+        if (count.length === fileCount) {
+          resolve(names);
         }
       });
     });
@@ -59,7 +57,7 @@ async function handleForm() {
   waitReader.then((data) => {
     downloadLinksElement.removeChild(search);
     const p = document.createElement("p");
-    if (data !== null) {
+    if (data.length > 0) {
       p.textContent = `Text found in: ${data}`;
     } else {
       p.textContent = "Couldn't find any files with specified text"

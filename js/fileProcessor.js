@@ -61,8 +61,11 @@ async function handleForm() {
     downloadLinksElement.appendChild(p);
     if (data.length > 1) {
       switch (game) {
-          case "sonicRumble":
-            downloadBlob(await downloadZip(data).blob(), "sonic_rumble_tf.zip");
+          case "sonicRumbleTrim":
+            downloadBlob(await downloadZip(data).blob(), "sonic_rumble_trim.zip");
+            break;
+          case "sonicRumbleDecrypt":
+            downloadBlob(await downloadZip(data).blob(), "sonic_rumble_dec.zip");
             break;
           default:
             break;

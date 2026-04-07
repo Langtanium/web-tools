@@ -13,11 +13,21 @@ export function setPageGame(gameType, inputElement) {
   const gameElement = document.querySelector("#game");
   const companyElement = document.querySelector("#company");
   switch (gameType) {
-    case "sonicRumble":
+    case "sonicRumbleTrim":
       titleElement.textContent += "Sonic Rumble";
       gameTitleElement.textContent = "Sonic Rumble File Trimmer";
       gameTextElement.innerHTML = `<b>Note:</b> The Unity files will be unversioned. 
-      To open them in Asset Studio you will need to go to <b>"Options>Specify Unity Version"</b> 
+      To open them in Asset Studio you will need to go to <b>"Options>Import Options>Specify Unity Version"</b> 
+      and insert the version <b>"2022.3.45f1"</b>.`;
+      inputElement.setAttribute("accept", ".bdl");
+      gameElement.textContent = "Sonic Rumble";
+      companyElement.textContent = "Sega";
+      break;
+    case "sonicRumbleDecrypt":
+      titleElement.textContent += "Sonic Rumble";
+      gameTitleElement.textContent = "Sonic Rumble File Decryptor";
+      gameTextElement.innerHTML = `<b>Note:</b> The Unity files will be unversioned. 
+      To open them in Asset Studio you will need to go to <b>"Options>Import Options>Specify Unity Version"</b> 
       and insert the version <b>"2022.3.45f1"</b>.`;
       inputElement.setAttribute("accept", ".bdl");
       gameElement.textContent = "Sonic Rumble";
