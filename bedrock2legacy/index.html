@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langtanium's Web Tools | Bedrock Skin to Legacy Console Skin</title>
+    <script type="module" src="../js/bedrock2legacy.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+</head>
+<body>
+    <header>
+        <h1><a href="../">Langtanium's Web Tools</a></h1>
+    </header>
+    <main>
+        <div id="game-info">
+            <h2> Bedrock Skin to Legacy Console Skin</h2>
+            <p>Converts Bedrock skin geometry (.json) to a ".txt" that can be imported into PCK-Studio 
+            to be used in Legacy Console Edition. Note!: If the skin has a 128x128 texture not mapped
+            to 64x64 geometry the UVs will be incorrect. Also, if the skin has geometry with perface UV
+            it too will be incorrect.</p>
+        </div>
+        <form>
+            <label for="file-input" class="custom-file-input">
+                Upload Files
+            </label>
+            <input id="file-input" type="file" name="files" accept=".json" multiple>
+            <label for="file-submit" class="custom-file-input">
+                Convert Skins
+            </label>
+            <input id="file-submit" type="submit">
+        </form>
+        <div class="file-downloads"></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Langtanium</p>
+    </footer>
+</body>
+</html>
