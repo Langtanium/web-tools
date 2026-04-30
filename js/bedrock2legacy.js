@@ -168,13 +168,13 @@ async function handleForm() {
                 hideWithArmor = 8;
               } else if (boneName == "RIGHTBOOTARMOROFFSET") {
                 boneName = "BOOT0";
-                yOrigin += defaultLegsOffsetY - currentleg0OffsetY;
+                yOrigin += defaultLegsOffsetY - currentLeg0OffsetY;
                 if (yOrigin != defaultLegsOffsetY) {
                   offsets += `OFFSET:${boneName} Y ${defaultLegsOffsetY - yOrigin}\r\n`;
                 }
               } else if (boneName == "LEFTBOOTARMOROFFSET") {
                 boneName = "BOOT1";
-                yOrigin += defaultLegsOffsetY - currentleg1OffsetY;
+                yOrigin += defaultLegsOffsetY - currentLeg1OffsetY;
                 if (yOrigin != defaultLegsOffsetY) {
                   offsets += `OFFSET:${boneName} Y ${defaultLegsOffsetY - yOrigin}\r\n`;
                 }
