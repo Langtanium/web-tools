@@ -75,8 +75,6 @@ async function handleForm() {
               let xOrigin = 0;
               let yOrigin = bone.pivot[1]
               let hideWithArmor = 0;
-              let mirror = 0;
-              let scale = 0;
 
               if (boneName == "HEAD") {
                 if (yOrigin != defaultHeadOffsetY) {
@@ -194,6 +192,8 @@ async function handleForm() {
 
               if (bone.cubes) {
                 bone.cubes.forEach(cube => {
+                  let mirror = 0;
+                  let scale = 0;
                   xOrigin += cube.origin[0];
                   yOrigin += -cube.origin[1] - cube.size[1];
                   if (cube.mirror) {
