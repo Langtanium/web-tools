@@ -194,15 +194,22 @@ async function handleForm() {
                 bone.cubes.forEach(cube => {
                   let mirror = 0;
                   let scale = 0;
+                  let uv = [cube.uv[0], cube[1]];
                   xOrigin += cube.origin[0];
                   yOrigin += -cube.origin[1] - cube.size[1];
+                  if (uv[0] > 64) {
+                    uv[0] -= 64;
+                  }
+                  if (uv[1] > 64) {
+                    uv[1] -= 64;
+                  }
                   if (cube.mirror) {
                     mirror = 1;
                   }
                   if (cube.inflate) {
                     scale = cube.inflate;
                   }
-                  skinLegacy += `BOX:${boneName} ${parseFloat(xOrigin.toFixed(3))} ${parseFloat(yOrigin.toFixed(3))} ${cube.origin[2]} ${cube.size[0]} ${cube.size[1]} ${cube.size[2]} ${cube.uv[0]} ${cube.uv[1]} ${hideWithArmor} ${mirror} ${scale}\r\n`;
+                  skinLegacy += `BOX:${boneName} ${parseFloat(xOrigin.toFixed(3))} ${parseFloat(yOrigin.toFixed(3))} ${cube.origin[2]} ${cube.size[0]} ${cube.size[1]} ${cube.size[2]} ${uv[0]} ${uv[1]} ${hideWithArmor} ${mirror} ${scale}\r\n`;
                   xOrigin -= cube.origin[0];
                   yOrigin -= -cube.origin[1] - cube.size[1];
                 });
