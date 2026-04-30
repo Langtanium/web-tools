@@ -137,6 +137,7 @@ async function handleForm() {
                 yOrigin = currentBodyOffsetY;
                 hideWithArmor = 2;
               } else if (boneName == "BELT") {
+                yOrigin = currentBodyOffsetY;
                 hideWithArmor = 4;
               } else if (boneName == "RIGHTARMARMOR") {
                 boneName = "ARM0ARMOR";
