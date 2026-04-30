@@ -49,6 +49,7 @@ async function handleForm() {
     const defaultLegsOffsetY = 12;
     const defaultLeg0OffsetX = 2;
     const defaultLeg1OffsetX = -2;
+    let currentBodyOffsetY = 24;
     let currentArm0OffsetY = 22;
     let currentArm1OffsetY = 22;
     let currentLeg0OffsetY = 12;
@@ -87,6 +88,7 @@ async function handleForm() {
                 if (yOrigin != defaultBodyOffsetY) {
                   offsets += `OFFSET:${boneName} Y ${defaultBodyOffsetY - yOrigin}\r\n`;
                 }
+                currentBodyOffsetY = yOrigin;
               } else if (boneName == "RIGHTARM") {
                 boneName = "ARM0";
                 xOrigin = defaultArm0OffsetX;
@@ -130,7 +132,11 @@ async function handleForm() {
               } else if (boneName == "HELMET") {
                 boneName = "HEAD";
                 hideWithArmor = 1;
+                if (yOrigin != defaultHeadOffsetY) {
+                  offsets += `OFFSET:${boneName} Y ${defaultHeadOffsetY - yOrigin}\r\n`;
+                }
               } else if (boneName == "BODYARMOR") {
+                yOrigin = currentBodyOffsetY;
                 hideWithArmor = 2;
               } else if (boneName == "BELT") {
                 hideWithArmor = 4;
@@ -160,6 +166,18 @@ async function handleForm() {
                 xOrigin = defaultLeg1OffsetX;
                 yOrigin = currentLeg1OffsetY;
                 hideWithArmor = 8;
+              } else if (boneName == "RIGHTBOOTARMOROFFSET") {
+                boneName = "BOOT0";
+                yOrigin += defaultLegsOffsetY - currentleg0OffsetY;
+                if (yOrigin != defaultLegsOffsetY) {
+                  offsets += `OFFSET:${boneName} Y ${defaultLegsOffsetY - yOrigin}\r\n`;
+                }
+              } else if (boneName == "LEFTBOOTARMOROFFSET") {
+                boneName = "BOOT1";
+                yOrigin += defaultLegsOffsetY - currentleg1OffsetY;
+                if (yOrigin != defaultLegsOffsetY) {
+                  offsets += `OFFSET:${boneName} Y ${defaultLegsOffsetY - yOrigin}\r\n`;
+                }
               } else if (boneName == "RIGHTITEM") {
                 boneName = "TOOL0";
                 yOrigin += defaultArmsOffsetY - currentArm0OffsetY;
